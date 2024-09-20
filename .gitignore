@@ -1,0 +1,26 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Diretório de dependências
+node_modules/
+
+# Diretório de builds
+dist/
+build/
+
+# Ambiente
+.env
+
+# Sistema operacional
+.DS_Store
+
+# Editor
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivo de configuração Firestore
+/server/secret.json
