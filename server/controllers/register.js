@@ -1,15 +1,19 @@
-const db = require('../firestore'); // Importa a conexão com o Firestore
+const db = require('../firestore');
+const bcrypt = require('bcrypt');
 
 const controllers = () => {
 
     const register = async (req) => {
+
         const { nome, telefone, endereco, email, senha } = req.body;
 
         if (!nome || !telefone || !endereco || !email || !senha) {
+
             return { status: 400, message: 'Todos os campos são obrigatórios!' };
         }
 
         try {
+            
             const userRef = db.collection('users').doc(email);
             const doc = await userRef.get();
 
@@ -17,16 +21,21 @@ const controllers = () => {
                 return { status: 400, message: 'Usuário já cadastrado!' };
             }
 
+            const saltRounds = 10;
+            const hashedPassword = await bcrypt.hash(senha, saltRounds);
+
             await userRef.set({
                 nome,
                 telefone,
                 endereco,
                 email,
-                senha
+                senha: hashedPassword
             });
 
             return { status: 201, message: 'Usuário cadastrado com sucesso!' };
+
         } catch (error) {
+
             return { status: 500, message: 'Erro ao cadastrar o usuário: ' + error.message };
         }
     };
@@ -37,7 +46,6 @@ const controllers = () => {
 }
 
 module.exports = Object.assign({ controllers });
-
 
 /*
 Exemplo de objeto de requisição para executar um registro:

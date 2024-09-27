@@ -1,16 +1,21 @@
 const db = require('../firestore'); // Importa a conexão com o Firestore
+const UsuarioAcessoToken = require('../common/protecaoAcesso');
+const Acesso = new UsuarioAcessoToken();
+
+const bcrypt = require('bcrypt');
 
 const controllers = () => {
 
     const login = async (req) => {
-
         const { email, senha } = req.body;
 
         if (!email || !senha) {
+
             return { status: 400, message: 'Email e senha são obrigatórios!' };
         }
 
         try {
+
             const userRef = db.collection('users').doc(email);
             const doc = await userRef.get();
 
@@ -20,12 +25,27 @@ const controllers = () => {
 
             const userData = doc.data();
 
-            if (userData.senha === senha) {
-                return { status: 200, message: 'Login realizado com sucesso!' };
+            const isPasswordCorrect = await bcrypt.compare(senha, userData.senha);
+
+            if (isPasswordCorrect) {
+
+                var tokenAcesso = Acesso.gerarTokenAcesso(userData.email);
+
+                return { 
+                    status: 200,
+                    TokenAcesso: tokenAcesso,
+                    Nome: userData.nome,
+                    Email: userData.email,
+                    Telefone: userData.telefone
+                };
+
             } else {
-                return { status: 401, message: 'Senha incorreta!' };
+
+                return { status: 400, message: 'Usuário ou Senha incorretos!' };
             }
+
         } catch (error) {
+
             return { status: 500, message: 'Erro ao fazer login: ' + error.message };
         }
     };
@@ -36,7 +56,6 @@ const controllers = () => {
 }
 
 module.exports = Object.assign({ controllers });
-
 
 /*
 
