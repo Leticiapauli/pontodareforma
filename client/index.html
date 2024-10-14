@@ -6,109 +6,69 @@
     <title>Ponta da Reforma</title>
 
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/fontawesome.css" />
+    <link rel="stylesheet" href="./css/fontawesome.css">
     <link rel="stylesheet" href="./css/animate.css" />
     <link rel="stylesheet" href="./css/main.css" />
 
 </head>
 <body>
 
+    <div class="loader-full animated fadeIn hidden">
+        <img src="./img/loader.png" width="100" class="animated pulse infinite" />
+    </div>
+
     <div class="bg-top"></div>
 
-    <header class="width-fix mt-5">
+    <header class="width-fix mt-5 animated fadeInUp">
         <div class="card">
-            <div class="d-flex justify-content-between align-items-center">
-                <!-- Logo e informações -->
-                <div class="d-flex">
-                    <div class="container-img"></div>
-                    <div class="infos">
-                        <h1><b>Ponta da Reforma</b></h1>
-                        <div class="infos-sub">
-                            <p class="status-open">
-                                <i class="fa fa-clock"></i> Aberta
-                            </p>
-                            <a href="./sobre.html" class="link">
-                                ver mais
-                            </a>
-                        </div>
+
+            <div class="d-flex">
+                <div class="container-img" id="imgLogoEmpresa"></div>
+                <div class="infos">
+                    <h1><b id="lblNomeEmpresa"></b></h1>
+                    <div class="infos-sub">
+                        <p class="status-open hidden"><i class="fa fa-clock"></i> <span id="lblLojaAberta"></span></p>
+                        <a href="./sobre.html" class="link">ver mais</a>
                     </div>
                 </div>
-
-                <!-- Botão de Cadastro no canto superior direito -->
-                <div>
-                    <a href="./cadastro.html" class="btn btn-primary">Cadastre-se</a>
-                </div>
             </div>
+
         </div>
     </header>
 
-    <section class="categoria width-fix mt-4">
+    <section class="categoria width-fix mt-4 animated fadeInUp">
         <div class="container-menu" id="listaCategorias">
-            <a href="#" class="item-categoria btn btn-white btn-sm mb-3 me-3 active">
-                <i class="fas fa-tools"></i>&nbsp; Ferramentas
-            </a>
-            <a href="#" class="item-categoria btn btn-white btn-sm mb-3 me-3">
-                <i class="fas fa-paint-roller"></i>&nbsp; Tintas
-            </a>
-            <a href="#" class="item-categoria btn btn-white btn-sm mb-3 me-3">
-                <i class="fas fa-hard-hat"></i>&nbsp; Materiais gerais
-            </a>
+            
         </div>
     </section>
 
-    <section class="lista width-fix mt-0 pb-5" id="listaItensCatalogo">
-        <div class="container-group mb-5">
-            <p class="title-categoria"><b>Ferramentas</b></p>
+    <section class="lista width-fix mt-0 pb-5" id="listaItensCardapio">
 
-            <div class="card mb-2 item-catalogo">
-                <div class="d-flex">
-                    <div class="container-img-produto" 
-                    style="background-image: url('./img/chaveinglesa.jpg'); background-size: cover;"></div>
-
-                    <div class="infos-produto">
-                        <p class="name"><b>Chave Inglesa</b></p>
-                        <p class="description">Indicada para fixar ou soltar porcas e parafusos sextavados. Conhecida também como chave inglesa. Para um melhor trabalho utilize sempre acessórios Vonder e para sua segurança sempre use equipamentos individuais de proteção.</p>
-                        <p class="price"><b>R$ 39,90</b></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-2 item-catalogo">
-                <div class="d-flex">
-                    <div class="container-img-produto" 
-                    style="background-image: url('./img/chavephilips.jpg'); background-size: cover;"></div>
-
-                    <div class="infos-produto">
-                        <p class="name"><b>Chave Phillips</b></p>
-                        <p class="description">Indicada para fixar e soltar parafusos com fenda cruzada/Phillips Para um melhor trabalho utilize sempre acessórios Vonder e para sua segurança sempre use equipamentos individuais de proteção.</p>
-                        <p class="price"><b>R$ 39,90</b></p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </section>
 
-    <section class="menu-bottom" id="menu-bottom">
-        <a class="menu-bottom-item active">
-            <i class="fas fa-book-open"></i>&nbsp; Catalogo
+    <section class="menu-bottom animated fadeIn delay-05s hidden" id="menu-bottom">
+        <a href="index.html" class="menu-bottom-item active">
+            <i class="fas fa-book-open"></i>&nbsp; Catálogo
         </a>
-        <a href="./pedido.html" class="menu-bottom-item">
+        <a href="pedido.html" class="menu-bottom-item">
             <i class="fas fa-utensils"></i>&nbsp; Pedido
         </a>
-        <a href="./carrinho.html" class="menu-bottom-item">
-            <span class="badge-total-carrinho">2</span>
-            <!-- <i class="fas fa-shopping-cart"></i> -->
-            Carrinho
+        <a href="carrinho.html" class="menu-bottom-item">
+            <span id="icone-carrinho-vazio" class="hidden"><i class="fas fa-shopping-cart"></i></span>
+            <span id="total-carrinho" class="badge-total-carrinho hidden"></span> 
+            &nbsp;Carrinho 
         </a>
     </section>
 
-    <section class="menu-bottom disabled hidden" id="menu-bottom-closed">
+    <section class="menu-bottom animated fadeIn delay-05s disabled hidden" id="menu-bottom-closed">
         <p class="mb-0"><b>Loja fechada no momento.</b></p>
     </section>
 
-    <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="./js/catalogo.js"></script>
-    
-</body>
+    <!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/popper.min.js"></script> -->
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/catalogo.js"></script>
+
+</body> 
 </html>
