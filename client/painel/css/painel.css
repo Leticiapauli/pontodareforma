@@ -1,9 +1,9 @@
-/* Login */
+/* LOGIN*/
 
 .login {
     width: calc(100% - 20px);
     max-width: 450px;
-    margin: 0 auto;
+    margin: 0px auto;
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -16,7 +16,7 @@
     background-color: var(--color-secondary);
 }
 
-.icon-form {
+span.icon-form {
     position: absolute;
     margin-left: 15px;
     margin-top: 11px;
@@ -38,11 +38,13 @@
     font-size: 18px;
 }
 
-/* Menu Left */
+/* CARDAPIO */
+
+/* MENU LEFT */
 
 .menu-left {
     width: 250px;
-    background-color: var(--color-secondary);
+    background: var(--color-secondary);
     position: fixed;
     left: 0;
     bottom: 0;
@@ -56,57 +58,68 @@
     margin-top: 55px;
 }
 
-.menu-left .logo {
+.logo {
     text-align: center;
     margin-left: -25px;
     margin-top: 30px;
 }
 
-.menu-item {
+a.menu-item {
     display: block;
-    padding: 15px 30px;
-    color: var(--color-black) !important;
+    padding: 12px;
+    color: var(--color-black);
     text-decoration: none !important;
 }
 
-.menu-item i {
+a.menu-item i {
+    margin-right: 8px;
     width: 18px;
     text-align: center;
-    margin-right: 8px;
 }
 
-.menu-item.active {
-    background-color: var(--color-background);
+.conteudo {
+    padding-left: 270px;
+    padding-right: 15px;
+}
+
+a.menu-item {
+    display: block;
+    padding: 15px 30px;
+    color: var(--color-black);
+}
+
+a.menu-item.active {
+    background: var(--color-background);
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
 
-.menu-item.active::before {
+a.menu-item.active:before {
     content: "";
+    position: absolute;
+    background-color: transparent;
     height: 50px;
     width: 25px;
-    background-color: transparent;
-    position: absolute;
     border-top-left-radius: 25px;
     box-shadow: 0 -25px 0 0 var(--color-background);
+    rotate: 180deg;
     right: 0;
     margin-top: -65px;
-    rotate: 180deg;
 }
 
-.menu-item.active::after {
+a.menu-item.active:after {
     content: "";
+    position: absolute;
+    background-color: transparent;
     height: 50px;
     width: 25px;
-    background-color: transparent;
-    position: absolute;
     border-top-right-radius: 25px;
     box-shadow: 0 -25px 0 0 var(--color-background);
     right: 0;
     margin-top: 40px;
 }
 
-/* Menu Topo */
+/* MENU TOPO */
 
 h1.title-page {
     color: var(--color-black);
@@ -119,7 +132,7 @@ h1.title-page {
     align-items: center;
 }
 
-.container-dados p {
+.container-right p {
     margin-bottom: 0;
     font-size: 16px;
     text-align: right;
@@ -127,7 +140,7 @@ h1.title-page {
     line-height: 15px;
 }
 
-.container-dados span {
+.container-right span {
     font-size: 13px;
     text-align: right;
     color: var(--color-text-out);
@@ -137,16 +150,11 @@ h1.title-page {
     margin-right: 30px;
 }
 
-.conteudo {
-    padding-left: 270px;
-    padding-right: 15px;
-}
-
 .conteudo-inner {
     margin-top: 50px;
 }
 
-/* Tela Pedidos */
+/* PEDIDOS */
 
 .menus-pedido i {
     margin-right: 5px;
@@ -164,7 +172,7 @@ h1.title-page {
 
 .badge-total-pedidos {
     display: inline-block;
-    background-color: var(--color-primary-out);
+    background: var(--color-primary-out);
     border-radius: 50px;
     font-size: 14px;
     width: 25px;
@@ -180,8 +188,7 @@ h1.title-page {
     float: right;
 }
 
-
-.info-pedido {
+p.info-pedido {
     font-size: 16px;
     margin-bottom: 10px;
     color: var(--color-black);
@@ -200,17 +207,17 @@ h1.title-page {
 
 .separate {
     height: 1px;
-    background-color: var(--color-text-out);
+    background: var(--color-text-out);
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
-.horario-pedido {
+p.horario-pedido {
     margin-bottom: 0px;
     font-size: 14px;
 }
 
-.total-pedido {
+p.total-pedido {
     text-align: right;
     margin-bottom: 0px;
     margin-top: 15px;
@@ -222,43 +229,49 @@ h1.title-page {
     border-radius: 0px;
 }
 
-.card-pedido::before {
+.card-pedido:before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 0px;
     height: 10px;
     width: 100%;
     top: -7px;
     background: radial-gradient(circle, transparent, transparent 50%, #ffffff 50%, #ffffff 100%) -7px -8px / 16px 16px repeat-x;
 }
 
-.card-pedido::after {
+.card-pedido:after {
     content: '';
     position: absolute;
-    left: 0;
+    left: 0px;
     height: 10px;
     width: 100%;
     bottom: -7px;
     background: radial-gradient(circle, transparent, transparent 50%, #ffffff 50%, #ffffff 100%) -15px 2px / 16px 16px repeat-x;
 }
 
+
 .card-pedido:hover {
     background-color: var(--color-secondary);
 }
 
-.card-pedido:hover::before, .card-pedido:hover::after {
-    background-image: radial-gradient(circle, transparent, transparent 50%, var(--color-secondary) 50%, var(--color-secondary) 100%);
+.card-pedido:hover::before {
+    background: radial-gradient(circle, transparent, transparent 50%, #fff2cc 50%, #fff2cc 100%) -7px -8px / 16px 16px repeat-x;
 }
 
-.card-content {
+.card-pedido:hover::after {
+    background: radial-gradient(circle, transparent, transparent 50%, #fff2cc 50%, #fff2cc 100%) -15px 2px / 16px 16px repeat-x;
+}
+
+.card-pedido-body:hover,
+.card-pedido-footer:hover {
     cursor: pointer;
 }
 
 .card-pedido-body {
-    height: 140px;
+    height: 120px;
 }
 
-/* Modal detalhes */
+/* MODAL DETALHES*/
 
 .modal-content {
     background: transparent;
@@ -267,18 +280,18 @@ h1.title-page {
 
 .modal-header {
     border-bottom: 0;
-    background-color: var(--color-background);
+    background: var(--color-background);
     border-radius: 0px;
 }
 
-.modal-header::before {
+.modal-header:before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 0px;
     height: 10px;
     width: 100%;
     top: -8px;
-    background: radial-gradient(circle, transparent, transparent 50%, var(--color-background) 50%, var(--color-background) 100%) -7px -8px / 16px 16px repeat-x;
+    background: radial-gradient(circle, transparent, transparent 50%, #fffdf7 50%, #fffdf7 100%) -7px -8px / 16px 16px repeat-x;
 }
 
 .modal-title {
@@ -286,7 +299,7 @@ h1.title-page {
     color: var(--color-black);
 }
 
-.modal-title .horario-pedido {
+span.horario-pedido {
     font-size: 14px;
     color: var(--color-text);
     padding-left: 15px;
@@ -299,7 +312,7 @@ h1.title-page {
 .container-dados-pedido {
     padding: 20px;
     padding-bottom: 25px;
-    background-color: var(--color-background);
+    background: var(--color-background);
 }
 
 .container-dados-pedido .d-flex {
@@ -307,18 +320,24 @@ h1.title-page {
 }
 
 .cursor-default {
-    cursor: default!important;
-}
-
-.container-dados-pedido .info-pedido {
-    font-size: 14px;
-    color: var(--color-text);
+    cursor: default;
 }
 
 .container-itens-pedido {
     padding: 20px;
-    background-color: var(--color-white);
+    background: var(--color-white);
 }
+
+.container-itens-pedido:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    height: 10px;
+    width: 100%;
+    margin-top: 17px;
+    background: radial-gradient(circle, transparent, transparent 50%, #ffffff 50%, #ffffff 100%) -15px 2px / 16px 16px repeat-x;
+}
+
 
 .container-itens-pedido .card-item {
     padding: 5px 0px 10px 0px;
@@ -329,22 +348,17 @@ h1.title-page {
     border: none;
 }
 
-.container-itens-pedido::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    height: 10px;
-    width: 100%;
-    margin-top: 17px;
-    background: radial-gradient(circle, transparent, transparent 50%, #ffffff 50%, #ffffff 100%) -15px 2px / 16px 16px repeat-x;
-}
-
 .footer-btn {
     display: flex;
     justify-content: end;
 }
 
-/* Cardápio */
+.modal-footer {
+    border: none;
+}
+
+
+/* CARDAPIO */
 
 .card-drag {
     display: flex;
@@ -359,8 +373,8 @@ h1.title-page {
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    height: 35px;
     cursor: grab;
+    height: 35px;
 }
 
 .card-drag .infos {
@@ -371,8 +385,8 @@ h1.title-page {
 }
 
 .card-drag .infos .name {
-    color: var(--color-black)!important;
-    text-decoration: none!important;
+    color: var(--color-black) !important;
+    text-decoration: none !important;
 }
 
 .actions {
@@ -382,8 +396,8 @@ h1.title-page {
 .icon-action {
     margin-left: 10px;
     font-size: 16px;
-    color: var(--color-black)!important;
-    text-decoration: none!important;
+    color: var(--color-black) !important;
+    text-decoration: none !important;
     width: 35px;
     height: 35px;
     background-color: var(--color-white);
@@ -393,25 +407,22 @@ h1.title-page {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
 }
 
 .icon-action:hover {
     background-color: var(--color-secondary);
 }
 
+.accordion>.card:first-of-type,
+.accordion>.card:not(:first-of-type):not(:last-of-type),
+.accordion>.card:last-of-type {
+    border-radius: 20px;
+}
+
 .title-produtos {
     font-size: 14px;
     color: var(--color-black);
-}
-
-.drag-icon-produto {
-    display: flex;
-    width: 35px;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    cursor: grab;
 }
 
 .lista-produtos .container-img-produto {
@@ -424,12 +435,12 @@ h1.title-page {
     flex: 1;
 }
 
-.badge-adicionais {
+span.badge-adicionais {
     position: absolute;
     top: 6px;
     margin-left: 19px;
     font-size: 12px;
-    background-color: var(--color-primary);
+    background: var(--color-primary);
     color: var(--color-black);
     width: 20px;
     height: 20px;
@@ -439,7 +450,17 @@ h1.title-page {
     align-items: center;
 }
 
-/* Delivery e Retirada */
+.drag-icon-produto {
+    display: flex;
+    width: 35px;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: grab;
+}
+
+
+/* CONFIGURAÇÕES */
 
 .menus-config i {
     margin-right: 5px;
@@ -469,44 +490,46 @@ h1.title-page {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-separate);
-    transition: .4s;
+    background-color: #ccc;
     -webkit-transition: .4s;
+    transition: .4s;
 }
 
-.slider::before {
-    content: "";
+.slider:before {
     position: absolute;
+    content: "";
     height: 17px;
     width: 17px;
     left: 4px;
     bottom: 4px;
     background-color: var(--color-white);
-    transition: .4s;
     -webkit-transition: .4s;
+    transition: .4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: var(--color-primary);
 }
 
-input:focus + .slider {
+input:focus+.slider {
     box-shadow: 0 0 1px var(--color-primary);
 }
 
-input:checked + .slider::before {
-    transform: translateX(25px);
-    -webkit-transform: translateX(25px);
-    -ms-transform: translateX(25px);
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
+/* Rounded sliders */
 .slider.round {
     border-radius: 34px;
 }
 
-.slider.round::before {
+.slider.round:before {
     border-radius: 50%;
 }
+
 
 .infos.config .text {
     position: absolute;
@@ -536,8 +559,9 @@ input:checked + .slider::before {
 }
 
 .tempo.disabled input {
-    background-color: #f5f5f5!important;
+    background-color: #f5f5f5 !important;
 }
+
 
 .container-group.inline {
     display: flex;
@@ -554,12 +578,14 @@ input:checked + .slider::before {
     font-weight: bold;
     padding-left: 35px;
     margin-right: 20px;
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
 
 .form-sm {
     width: 150px;
 }
+
+
 
 .table {
     font-size: 16px;
@@ -586,22 +612,22 @@ input:checked + .slider::before {
 }
 
 .color-red {
-    color: var(--color-red)!important;
+    color: var(--color-red) !important;
 }
+
+
 
 .opacity-05 {
     opacity: 0.5;
 }
 
-/* Empresa */
+/* EMPRESA */
 
 .logo-empresa .container-img-sobre {
     position: relative;
     margin-top: 0;
     width: 110px;
     height: 110px;
-    right: 0;
-    margin-right: 20px;
 }
 
 .logo-empresa .icon-action {
@@ -615,8 +641,10 @@ input:checked + .slider::before {
 }
 
 .detalhes-empresa textarea {
-    height: 250px!important;
+    height: 150px;
 }
+
+
 
 .container-cep .form-control {
     padding-right: 75px;
@@ -628,21 +656,246 @@ input:checked + .slider::before {
     margin-right: 10px;
 }
 
+
+
 .horario .form-control {
-    height: 52px;
+    height: 51px;
 }
 
-.horario .btn-red {
-    margin-top: 30px;
+.btn-red {
+    border: none !important;
+    background-color: var(--color-red);
+    color: var(--color-white) !important;
+    border-radius: 20px;
+    padding: 15px 25px;
+    font-size: 20px;
+    box-shadow: var(--box-shadow);
 }
 
-/* Relatórios */
+
+/* RELATORIOS */
+
+.label-card {
+    font-size: 14px;
+    color: var(--color-text);
+}
 
 .value-card {
     font-size: 20px;
     color: var(--color-black);
 }
 
-.card-table, .data-table {
-    font-size: 14px!important;
+
+
+#chartjs-tooltip {
+    background: var(--color-secondary);
+    border-radius: 10px;
+    padding: 10px !important;
+}
+
+#chartjs-tooltip th,
+#chartjs-tooltip b {
+    font-weight: bold !important;
+    color: var(--color-black);
+}
+
+
+
+.card-table {
+    font-size: 14px !important;
+}
+
+.data-table {
+    font-size: 14px !important;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    margin-top: 35px;
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    position: absolute;
+    right: 25px;
+    margin-top: 15px;
+}
+
+div#data-table_length {
+    margin-top: 20px;
+}
+
+#data-table_wrapper {
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+table.dataTable td {
+    vertical-align: middle;
+}
+
+#data-table-coletas-fatura {
+    font-size: 14px;
+}
+
+#data-table-coletas-fatura_info,
+#data-table-coletas-fatura_length label {
+    font-size: 14px;
+}
+
+
+div.dataTables_wrapper div.dataTables_filter label {
+    margin-bottom: 20px;
+}
+
+
+/* Modal upload logo*/
+
+
+.modal-cadastro .modal-content {
+    background-color: var(--color-white);
+}
+
+.upload #drop-area {
+    border: 2px dashed var(--color-primary);
+    border-radius: 20px;
+    padding: 70px 30px;
+    background: var(--color-white);
+}
+
+.upload #drop-area.highlight {
+    background-color: var(--color-secondary);
+}
+
+.upload p {
+    margin-top: 0;
+    color: var(--color-black);
+}
+
+.upload .my-form {
+    margin-bottom: 10px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.upload #gallery {
+    margin-top: 10px;
+}
+
+.upload #gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.upload .button {
+    display: inline-block;
+    padding: 10px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.upload .button:hover {
+    background: #ddd;
+}
+
+.upload #fileElem {
+    display: none;
+}
+
+/* Tab Horários */
+
+.form-control.error {
+    border: 1px solid var(--color-red)!important;
+}
+
+/* Modal de Cadastro / Edição */
+
+.modal-form .modal-content, .modal-form .modal-header {
+    background-color: var(--color-white);
+}
+
+.modal-form .modal-header {
+    border-bottom: 1px solid #f5f5f5;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-form .modal-header:before {
+    content: none;
+}
+
+.modal-form .modal-body {
+    padding: 20px;
+}
+
+.modal-form .footer-btn {
+    margin-top: 0px!important;
+}
+
+.fa-select, .fa-select option {
+    font-family: 'Lato', 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+
+/* Modal Opcionais Produto */
+
+div#addOpcional {
+    background: var(--color-white);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 15px;
+    display: hidden;
+}
+
+.float-right {
+    float: right;
+}
+
+.flex-hint {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-left: 5px solid var(--color-primary);
+    background-color: #ebebeb;
+    border-radius: 10px;
+}
+
+.rascunho {
+    float: right;
+    color: var(--color-black);
+    background-color: #e1e1e1;
+    padding: 6px 10px;
+    font-size: 11px;
+}
+
+#modalOpcionaisProduto .container-group {
+    padding-bottom: 30px;
+    margin-bottom: 30px!important;
+    border-bottom: 2px dashed var(--color-input-out);
+}
+
+#modalOpcionaisProduto .container-group:last-child {
+    border-bottom: none;
+}
+
+
+/* Gráfico */
+
+p#lblNenhumFaturamento {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 175px;
+    font-size: 18px;
+    color: #000;
 }
